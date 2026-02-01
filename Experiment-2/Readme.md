@@ -2,19 +2,11 @@
 
 ## Docker Installation, Configuration and Running Images
 
----
-
-## **Aim**
-
-To install and configure Docker, pull Docker images, run containers with port mapping, verify running containers, and manage Docker containers and images.
-
----
 
 ## **Software Requirements**
 
 * Operating System: Ubuntu / Linux
 * Docker Engine
-* Internet connection
 
 ---
 
