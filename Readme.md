@@ -1,1 +1,1 @@
-(Add CD Lab experiments with Vagrant setup)
+This repo is for Containerization and devops lab
