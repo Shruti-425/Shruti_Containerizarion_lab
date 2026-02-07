@@ -44,7 +44,7 @@ EXPERIMENT-3/
 docker pull nginx:latest
 ````
 
-![Pull nginx](Part 1/Image 0.png)
+![Pull nginx](Part 1\Image 0.png)
 
 ### Run Container
 
