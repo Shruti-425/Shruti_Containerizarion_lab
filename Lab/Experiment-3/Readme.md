@@ -1,6 +1,6 @@
 # Experiment 3: Docker – NGINX & Web Application Containerization
 
-This repository contains **Experiment‑3**, demonstrating Docker fundamentals through NGINX deployment, custom image creation, image comparison, volume usage, and preparation of a sample Flask web application for containerization.
+This repository contains **Experiment-3**, demonstrating Docker fundamentals through NGINX deployment, custom image creation, image comparison, volume usage, and preparation of a sample Flask web application for containerization.
 
 ---
 
@@ -8,17 +8,18 @@ This repository contains **Experiment‑3**, demonstrating Docker fundamentals t
 
 To understand and implement Docker containerization concepts by:
 
-* Running official Docker images
-* Building custom Docker images using different base OS images
-* Comparing image sizes and layers
-* Serving custom content using Docker volumes
-* Preparing a simple web application for containerization
+- Running official Docker images  
+- Building custom Docker images using different base OS images  
+- Comparing image sizes and layers  
+- Serving custom content using Docker volumes  
+- Preparing a simple web application for containerization  
 
 ---
 
 ##  Experiment Structure
 
 ```
+
 EXPERIMENT-3/
 │
 ├── Part 1/                # Official NGINX image
@@ -30,18 +31,20 @@ EXPERIMENT-3/
 │   └── flask-app/         # Sample Flask web application
 │       ├── app.py
 │       └── requirements.txt
-└── README.md
-```
+└── Readme.md
+
+````
 
 ---
 
 ##  Part 1: Running Official NGINX Image
 
 ### Pull Image
-
 ```bash
 docker pull nginx:latest
-```
+````
+
+![Pull nginx](Part 1/Image 0.png)
 
 ### Run Container
 
@@ -55,7 +58,10 @@ docker run -d -p 8080:80 --name exp3-nginx nginx
 curl http://localhost:8080
 ```
 
-✔ Default **NGINX welcome page** is displayed.
+![NGINX running](Part 1/Image 4.png)
+![NGINX browser](Part 1/Image 5.png)
+
+ Default **NGINX welcome page** is displayed.
 
 ---
 
@@ -76,11 +82,15 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
+![Dockerfile Ubuntu](Part 2/Part2_Image_1.png)
+
 ### Build Image
 
 ```bash
 docker build -t nginx-ubuntu .
 ```
+
+![Build Ubuntu](Part 2/Part 2 Image 2.png)
 
 ### Run Container
 
@@ -88,11 +98,7 @@ docker build -t nginx-ubuntu .
 docker run -d -p 8081:80 --name nginx-ubuntu nginx-ubuntu
 ```
 
-### Observation
-
-```bash
-docker images nginx-ubuntu
-```
+![Ubuntu NGINX running](Part 2/Part 2 Image 3.png)
 
  Custom Ubuntu-based NGINX image successfully created.
 
@@ -112,11 +118,15 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
+![Dockerfile Alpine](Part 3/P3 Image1.png)
+
 ### Build Image
 
 ```bash
 docker build -t nginx-alpine .
 ```
+
+![Build Alpine](Part 3/P3 Image 2.png)
 
 ### Run Container
 
@@ -130,6 +140,8 @@ docker run -d -p 8082:80 --name nginx-alpine nginx-alpine
 docker images nginx-alpine
 ```
 
+![Alpine image size](Part 3/P3 Image 3 ob.png)
+
  Alpine-based image created (~16MB), demonstrating lightweight containers.
 
 ---
@@ -142,6 +154,9 @@ docker images nginx-alpine
 docker images | findstr nginx
 ```
 
+![Compare images](Part 4/P4 Image 1.png)
+![Compare images](Part 4/P4 Image 2.png)
+
 ### Inspect Layers
 
 ```bash
@@ -149,6 +164,9 @@ docker history nginx
 docker history nginx-ubuntu
 docker history nginx-alpine
 ```
+
+![Layer history](Part 4/P4 Image 3.png)
+![Layer history](Part 4/P4 Image 4.png)
 
 ### Observations
 
@@ -181,7 +199,7 @@ docker run -d -p 8083:80 -v "%cd%\html:/usr/share/nginx/html" nginx
 
 ---
 
-## 🔹 Sample Web Application (Flask – Pre‑Containerization)
+##  Sample Web Application (Flask – Pre-Containerization)
 
 ### app.py
 
@@ -219,8 +237,7 @@ http://localhost:5000
 
 ---
 
-
-##  Tech Used
+## Tech Used
 
 * Docker
 * NGINX
