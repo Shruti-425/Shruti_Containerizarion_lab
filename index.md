@@ -1,11 +1,5 @@
 # Containerization & DevOps Lab
 
-##  Main Sections
-
-- [ Lab Folder](Lab/)
-- [ Theory Folder](Theory/)
-
----
 =======
 ## Experiments
 - [Experiment 1 – Virtual Machine & Container](Experiment-1/Readme.md)
