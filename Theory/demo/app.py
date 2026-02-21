@@ -1,8 +1,6 @@
 # Simple program to verify SAP ID
-# This program is intentionally basic
-# Focus of this task is containerization, not Python
 
-import numpy as np  # dependency for learning purpose
+import numpy as np
 
 stored_sapid = "500122460"
 
