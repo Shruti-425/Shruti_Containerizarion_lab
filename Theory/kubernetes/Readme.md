@@ -36,7 +36,8 @@ kubectl get pods
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a1.png)
+![Step 1](Images/a2.png)
+![Step 1](Images/a3.png)
 
 ---
 
@@ -51,9 +52,6 @@ Check:
 * Container image
 * Port (80)
 * Events
-
- **Output Screenshot:**
-![Step 1](Images/a2.png)
 
 ---
 
@@ -72,7 +70,10 @@ http://localhost:8081
  Output: **Apache “It works!” page**
 
  **Output Screenshot:**
-![Step 1](Images/a3.png)
+![Step 1](Images/a4.png)
+![Step 1](Images/a5.png)
+![Step 1](Images/a6.png)
+
 
 ---
 
@@ -83,7 +84,7 @@ kubectl delete pod apache-pod
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a4.png)
+![Step 1](Images/a7.png)
 
  Insight:
 
@@ -105,8 +106,8 @@ kubectl get pods
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a5.png)
-
+![Step 1](Images/a8.png)
+![Step 1](Images/a9.png)
 ---
 
 ## 🔹 Step 6: Expose Deployment
@@ -123,7 +124,10 @@ http://localhost:8082
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a6.png)
+![Step 1](Images/a10.png)
+![Step 1](Images/a11.png)
+![Step 1](Images/a12.png)
+
 
 ---
 
@@ -139,7 +143,8 @@ kubectl get pods
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a7.png)
+![Step 1](Images/a13.png)
+![Step 1](Images/a14.png)
 
  Observation:
 
@@ -150,9 +155,6 @@ kubectl get pods
 ## 🔹 Step 8: Load Distribution
 
 * Refresh browser multiple times
-
- **Output Screenshot:**
-![Step 1](Images/a8.png)
 
  Traffic distributed across pods
 
@@ -170,7 +172,8 @@ kubectl get pods
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a9.png)
+![Step 1](Images/a15.png)
+![Step 1](Images/a16.png)
 
 ---
 
@@ -180,13 +183,16 @@ kubectl get pods
 kubectl describe pod <pod-name>
 ```
 
+ **Output Screenshot:**
+![Step 1](Images/a17.png)
+
 Check:
 
 * `ImagePullBackOff`
 * Error logs
 
  **Output Screenshot:**
-![Step 1](Images/a10.png)
+![Step 1](Images/a18.png)
 
 ---
 
@@ -197,7 +203,7 @@ kubectl set image deployment/apache httpd=httpd
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a11.png)
+![Step 1](Images/a19.png)
 
 ---
 
@@ -218,7 +224,7 @@ ls /usr/local/apache2/htdocs
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a12.png)
+![Step 1](Images/a20.png)
 
 
 ---
@@ -235,8 +241,8 @@ kubectl get pods -w
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a13.png)
-
+![Step 1](Images/a21.png)
+![Step 1](Images/a22.png)
  Insight:
 
 * Kubernetes recreates pod automatically
@@ -251,7 +257,7 @@ kubectl delete service apache
 ```
 
  **Output Screenshot:**
-![Step 1](Images/a14.png)
+![Step 1](Images/a23.png)
 
 ---
 
@@ -263,10 +269,6 @@ kubectl delete service apache
 * Debugging container issues
 * Accessing container filesystem
 * Self-healing mechanism
-
-
-![Step 1](Images/a15.png)
-![Step 1](Images/a16.png)
 
 ---
 
@@ -281,10 +283,6 @@ kubectl exec -it <pod-name> -- /bin/bash
 ```bash
 echo "Hello from Kubernetes" > /usr/local/apache2/htdocs/index.html
 ```
-
- **Output Screenshot:**
-![Step 1](Images/a17.png)
-
 
 ---
 
