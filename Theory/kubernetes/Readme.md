@@ -36,7 +36,7 @@ kubectl get pods
 ```
 
  **Output Screenshot:**
-![Step 1](a1.png)
+![Step 1](Images/a1.png)
 
 ---
 
@@ -53,7 +53,7 @@ Check:
 * Events
 
  **Output Screenshot:**
-![Step 2](a2.png)
+![Step 1](Images/a2.png)
 
 ---
 
@@ -72,7 +72,7 @@ http://localhost:8081
  Output: **Apache “It works!” page**
 
  **Output Screenshot:**
-![Step 3](a3.png)
+![Step 1](Images/a3.png)
 
 ---
 
@@ -83,7 +83,7 @@ kubectl delete pod apache-pod
 ```
 
  **Output Screenshot:**
-![Step 4](a4.png)
+![Step 1](Images/a4.png)
 
  Insight:
 
@@ -105,7 +105,7 @@ kubectl get pods
 ```
 
  **Output Screenshot:**
-![Step 5](a5.png)
+![Step 1](Images/a5.png)
 
 ---
 
@@ -123,7 +123,7 @@ http://localhost:8082
 ```
 
  **Output Screenshot:**
-![Step 6](a6.png)
+![Step 1](Images/a6.png)
 
 ---
 
@@ -139,7 +139,7 @@ kubectl get pods
 ```
 
  **Output Screenshot:**
-![Step 7](a7.png)
+![Step 1](Images/a7.png)
 
  Observation:
 
@@ -152,7 +152,7 @@ kubectl get pods
 * Refresh browser multiple times
 
  **Output Screenshot:**
-![Step 8](a8.png)
+![Step 1](Images/a8.png)
 
  Traffic distributed across pods
 
@@ -170,7 +170,7 @@ kubectl get pods
 ```
 
  **Output Screenshot:**
-![Step 9](a9.png)
+![Step 1](Images/a9.png)
 
 ---
 
@@ -186,7 +186,7 @@ Check:
 * Error logs
 
  **Output Screenshot:**
-![Step 10](a10.png)
+![Step 1](Images/a10.png)
 
 ---
 
@@ -197,7 +197,7 @@ kubectl set image deployment/apache httpd=httpd
 ```
 
  **Output Screenshot:**
-![Step 11](a11.png)
+![Step 1](Images/a11.png)
 
 ---
 
@@ -218,7 +218,7 @@ ls /usr/local/apache2/htdocs
 ```
 
  **Output Screenshot:**
-![Step 12](a12.png)
+![Step 1](Images/a12.png)
 
 
 ---
@@ -235,7 +235,7 @@ kubectl get pods -w
 ```
 
  **Output Screenshot:**
-![Step 13](a13.png)
+![Step 1](Images/a13.png)
 
  Insight:
 
@@ -251,7 +251,7 @@ kubectl delete service apache
 ```
 
  **Output Screenshot:**
-![Cleanup](a14.png)
+![Step 1](Images/a14.png)
 
 ---
 
@@ -265,8 +265,8 @@ kubectl delete service apache
 * Self-healing mechanism
 
 
-![Summary 1](a15.png)
-![Summary 2](a16.png)
+![Step 1](Images/a15.png)
+![Step 1](Images/a16.png)
 
 ---
 
@@ -283,7 +283,7 @@ echo "Hello from Kubernetes" > /usr/local/apache2/htdocs/index.html
 ```
 
  **Output Screenshot:**
-![Challenge](a17.png)
+![Step 1](Images/a17.png)
 
 
 ---
