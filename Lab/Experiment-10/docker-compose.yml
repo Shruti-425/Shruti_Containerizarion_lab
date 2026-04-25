@@ -26,6 +26,7 @@ services:
     volumes:
       - sonar-data:/opt/sonarqube/data
       - sonar-extensions:/opt/sonarqube/extensions
+
     depends_on:
       - sonar-db
     networks:
@@ -39,3 +40,6 @@ volumes:
 networks:
   sonarqube-lab:
     driver: bridge
+
+networks:
+  sonarqube-lab:

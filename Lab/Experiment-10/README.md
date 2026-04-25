@@ -55,6 +55,24 @@ Your Code → Sonar Scanner → SonarQube Server → PostgreSQL DB → Dashboard
 Create `docker-compose.yml`:
 
 ```yaml
+=======
+# Experiment 10: SonarQube - Static Code Analysis
+
+##  Objective
+
+To set up SonarQube using Docker Compose, perform static code analysis on a Java project, and view code quality results.
+
+---
+
+##  Step 1: Start the SonarQube Server
+
+We will use Docker Compose to start both the SonarQube server and its PostgreSQL database together.
+
+### Create a file called `docker-compose.yml`
+
+```yaml
+version: '3.8'
+>>>>>>> 935e3a6 (Added)
 services:
   sonar-db:
     image: postgres:13
@@ -81,6 +99,8 @@ services:
     volumes:
       - sonar-data:/opt/sonarqube/data
       - sonar-extensions:/opt/sonarqube/extensions
+=======
+>>>>>>> 935e3a6 (Added)
     depends_on:
       - sonar-db
     networks:
@@ -88,8 +108,11 @@ services:
 
 volumes:
   sonar-db-data:
+<<<<<<< HEAD
   sonar-data:
   sonar-extensions:
+=======
+>>>>>>> 935e3a6 (Added)
 
 networks:
   sonarqube-lab:
@@ -106,6 +129,26 @@ docker-compose logs -f sonarqube
 http://localhost:9000
 
 
+=======
+### Start both containers
+
+```bash
+docker-compose up -d
+```
+
+### Check logs
+
+```bash
+docker-compose logs -f sonarqube
+```
+
+Wait until SonarQube starts successfully.
+
+### Open in browser
+
+```
+http://localhost:9000
+```
 
 ---
 
@@ -147,13 +190,70 @@ Add in `pom.xml`:
     <sonar.host.url>http://localhost:9000</sonar.host.url>
     <sonar.login>YOUR_TOKEN</sonar.login>
 </properties>
+=======
+Inside SonarQube dashboard:
+
+* Click **Profile (top-right)**
+* Go to **My Account → Security**
+* Generate a token
+* Save it for later use
+
+---
+
+##  Step 3: Create Sample Java Project
+
+```bash
+mkdir -p sample-java-app/src/main/java/com/example
+cd sample-java-app
+```
+
+### Create `Calculator.java`
+
+```java
+package com.example;
+
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+}
+```
+
+### Create `pom.xml`
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>sample-java-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
 ```
 
 ---
 
-## ▶ Step 5: Run SonarQube Analysis
+##  Step 5: Run SonarQube Analysis
 
 ### Using Maven
+=======
+##  Step 4: Run Scanner
+
+Inside the project folder:
 
 ```bash
 mvn sonar:sonar -Dsonar.login=YOUR_TOKEN
@@ -164,6 +264,14 @@ mvn sonar:sonar -Dsonar.login=YOUR_TOKEN
 ##  Step 6: View Dashboard
 
 Open:
+=======
+Replace `YOUR_TOKEN` with the generated token.
+
+---
+
+##  Step 5: View Results
+
+Open in browser:
 
 ```
 http://localhost:9000
@@ -171,11 +279,26 @@ http://localhost:9000
 
 ---
 
-## 🔍 API Example
+##  API Example
 
 ```bash
 curl -u admin:YOUR_TOKEN \
 "http://localhost:9000/api/issues/search?projectKeys=sample-java-app&types=BUG"
+=======
+You will see:
+
+* Code quality metrics
+* Bugs and vulnerabilities
+* Code smells
+* Analysis reports
+
+---
+
+##  Step 6: Stop the Server
+
+```bash
+docker-compose down
+>>>>>>> 935e3a6 (Added)
 ```
 
 ---
@@ -214,7 +337,7 @@ stage('SonarQube Analysis') {
 
 ---
 
-## 🏁 Conclusion
+##  Conclusion
 
 * SonarQube helps maintain high code quality
 * Scanner + Server both are required
