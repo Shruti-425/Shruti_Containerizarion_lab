@@ -7,3 +7,16 @@ Thumbs.db
 
 # Logs
 *.log
+# Generated files
+*.pdf
+media/
+
+# Scripts (optional if not needed)
+*.sh
+
+# Packages
+*.deb
+
+# OS files
+Thumbs.db
+.DS_Store
